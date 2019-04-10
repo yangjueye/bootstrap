@@ -12,12 +12,12 @@ import {
   makeArray,
   noop,
   typeCheckConfig
-} from './util/index'
-import Data from './dom/data'
-import EventHandler from './dom/eventHandler'
-import Manipulator from './dom/manipulator'
+} from '../util/index'
+import Data from '../dom/data'
+import EventHandler from '../dom/eventHandler'
+import Manipulator from '../dom/manipulator'
 import Popper from 'popper.js'
-import SelectorEngine from './dom/selectorEngine'
+import SelectorEngine from '../dom/selectorEngine'
 
 /**
  * ------------------------------------------------------------------------
@@ -545,7 +545,7 @@ EventHandler
  * ------------------------------------------------------------------------
  * add .dropdown to jQuery only if jQuery is present
  */
-
+/* istanbul ignore if */
 if (typeof $ !== 'undefined') {
   const JQUERY_NO_CONFLICT = $.fn[NAME]
   $.fn[NAME] = Dropdown._jQueryInterface
